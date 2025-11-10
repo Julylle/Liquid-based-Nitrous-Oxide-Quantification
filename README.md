@@ -1,5 +1,5 @@
 # Liquid based Nitrous Oxide Quantification
-The respository provides a practical tool wrapped as a Python package to estimated nitrous oxide emission using the liquid N<sub>2</sub>O sensor. It elaborated processes from data collection to mass trasnfer process estimation. It supports robust data preprocessing (IQR outlier removal, interpolation), nitrous oxide mass transfer coefficient (k<sub>L</sub>a<sub>N<sub>2</sub>O</sub>) and nitrous oxide (N<sub>2</sub>O) flux estimations, and visualization of results.
+The respository provides a practical tool wrapped as a Python package to estimated nitrous oxide (N<sub>2</sub>O) emission using the liquid N<sub>2</sub>O sensor. It elaborated processes from data collection to mass trasnfer process estimation. It supports robust data preprocessing (IQR outlier removal, interpolation), nitrous oxide mass transfer coefficient (k<sub>L</sub>a<sub>N<sub>2</sub>O</sub>) and nitrous oxide (N<sub>2</sub>O) flux estimations, and visualization of results.
 
 ---
 
