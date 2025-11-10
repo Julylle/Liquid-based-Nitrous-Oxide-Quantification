@@ -13,7 +13,7 @@ The respository provides a practical tool wrapped as a Python package to estimat
 
 ---
 
-## 🚀 Installation
+## ⚙️ Installation
 * Ensure you have Python 3.8+ and the following dependencies:
 pandas
 numpy
@@ -25,19 +25,29 @@ Clone this repository and install in editable (development) mode:
 ```bash
 git clone https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification.git
 cd Liquid-based-Nitrous-Oxide-Quantification
+# Install the package in editable mode
 python -m pip install -e .
 
-from liquidbased_quantification import LiquidQuantifier
+```
 
+## 🚀 Quick start
+
+* Option 1: In Anaconda Powershell Prompt
+```bash
+# Activate your interactive Python shell
+python
+# load the module
+from liquidbased_quantification import LiquidQuantifier
 # Initialize model with your Excel data
 model = LiquidQuantifier("data/Monitoring_Data_Example.xlsx")
-
 # Run full analysis pipeline
 results = model.run_pipeline(show_plots=True)
-
-# Reinstall in editable mode
-python -m pip install -e .
 ```
+
+* Option 2: In any Python interpreter under your Conda environment with the cloned package installed:
+Open ./demo.py and click Run (e.g., in VS Code or Spyder), or, open ./demo.ipynb in Jupyter Notebook and run all cells
+
+
 
 ---
 ## 🧩 Example Data
