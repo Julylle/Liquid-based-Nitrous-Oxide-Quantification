@@ -54,7 +54,7 @@ results = model.run_pipeline(show_plots=True)
 ---
 ## 🧩 Example Data
 
-A placeholder Excel file is included under data/Monitoring_Data_Example.xlsx.
+A placeholder Excel file is included under ['data/Monitoring_Data_Example.xlsx'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification/blob/21d9d6b2bafa2d38a378dd28d77513d84e06478f/data/Monitoring_Data_Example.xlsx).
 Replace this file with your actual monitoring dataset.
 Your dataset should contain timestamped measurements of dissolved oxygen, N₂O, and related process variables.
 Your dataset should keep the same header and unit as the provided template.
@@ -77,9 +77,10 @@ Wang, S., Duan, H. (2025). Chapter 3. Liquid based quantification methodology. T
 Pull requests are welcome!
 For major changes, please open an issue to discuss your proposed ideas first.
 
-You may also contact the author directly using the information below.
-Shuting Wang
-School of Chemical Engineering,
-The University of Queensland, Australia
+You may also contact the author directly using the information below:  
+
+Shuting Wang  
+School of Chemical Engineering,  
+The University of Queensland, Australia  
 📧 shuting.wang@uq.edu.au
 
