@@ -1,4 +1,4 @@
-# Liquid based Nitrous Oxide Quantification
+# Liquid-based Nitrous Oxide Quantification
 The respository provides a practical tool wrapped as a Python package for calculating nitrous oxide (N<sub>2</sub>O) emissions using a liquid N<sub>2</sub>O sensor. It details the workflow from data collection through robust preprocessing (IQR outlier removal, interpolation), to the estimation of the N<sub>2</sub>O mass-transfer coefficient (k<sub>L</sub>a<sub>N<sub>2</sub>O</sub>), calculation of the N<sub>2</sub>O flux, and visualization of results.
 
 ---
