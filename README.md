@@ -62,7 +62,7 @@ Your dataset should keep the same header and unit as the provided template.
 ---
 
 ## 📜 License
-This project is licensed under the MIT License — see the LICENSE file for details.
+This project is licensed under the MIT License, see the LICENSE file for details.
 
 ---
 
