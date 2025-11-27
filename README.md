@@ -9,7 +9,6 @@ The respository provides a practical tool wrapped as a Python package for calcul
 - **Automated preprocessing**: outlier removal, interpolation, and data smoothing  
 - **k<sub>L</sub>a estimation** using time-series oxygen and N<sub>2</sub>O sensor data  
 - **Interactive visualizations** for comparing pre- and post-treatment data  
-- **Excel data input/output** with automated parsing  
 
 ---
 
@@ -37,8 +36,12 @@ python -m pip install -e .
 Replace this file with your actual monitoring dataset.  
 * Your dataset should contain timestamped measurements of dissolved N<sub>2</sub>O concentration (mgN<sub>2</sub>O-N/L), liquid temperature (°C) and pass airflow rate (m<sup>3</sup>/s). Please ensure that the units of all variables are converted to the specified units in advance, as this is required for the subsequent calculations.   
 * Your dataset should keep the same header as the provided template.
-* Please update the reactor depth (D<sub>R</sub>) and aeration field size (AerationFieldSize) in the demo scripts (i.e. ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py) or ['demo.ipynb'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.ipynb) to match your plant dimensions.
-
+* Please update the reactor depth (D<sub>R</sub>) and aeration field size (AerationFieldSize) in the demo scripts (i.e. ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py) or ['demo.ipynb'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.ipynb) to match your plant dimensions. The line you need to modify is shown below::
+```bash
+# The two values should be updated according to your own plant dimensions
+# D_R is in the unit of m, and AerationFieldSize is in the unit of m<sup>2</sup>
+model = LiquidQuantifier("data/Monitoring_Data_Example.xlsx", D_R = 7.55, AerationFieldSize = 462.0)
+```
 ---
 
 
