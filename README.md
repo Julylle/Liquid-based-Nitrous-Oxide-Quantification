@@ -9,7 +9,6 @@ The respository provides a practical tool wrapped as a Python package for calcul
 - **Automated preprocessing**: outlier removal, interpolation, and data smoothing  
 - **k<sub>L</sub>a estimation** using time-series oxygen and N<sub>2</sub>O sensor data  
 - **Interactive visualizations** for comparing pre- and post-treatment data  
-- **Excel data input/output** with automated parsing  
 
 ---
 
