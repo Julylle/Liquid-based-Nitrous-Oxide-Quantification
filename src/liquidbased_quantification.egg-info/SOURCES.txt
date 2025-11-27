@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/liquidbased_quantification.py
+src/liquidbased_quantification.egg-info/PKG-INFO
+src/liquidbased_quantification.egg-info/SOURCES.txt
+src/liquidbased_quantification.egg-info/dependency_links.txt
+src/liquidbased_quantification.egg-info/top_level.txt
