@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 10 13:18:55 2025
-
-@author: Shuting Wang
-"""
+from __future__ import annotations
 
 """
 liquidbased_quantification
@@ -27,7 +22,6 @@ Typical usage example:
     results = model.results
 """
 
-from __future__ import annotations
 from typing import List, Tuple, Optional
 import pandas as pd
 import numpy as np
@@ -135,33 +129,83 @@ class LiquidQuantifier:
         return df.interpolate(method='linear')
 
     # ----------------------------------------------------------------------
-    # Plotting
+    # Plotting of raw VS pretereatment results
     # ----------------------------------------------------------------------
-
+    
     @staticmethod
     def compare_plot(df: pd.DataFrame, cols: List[str], pretreat: str, ylabel: str,
-                     size: Tuple[int, int] = (10, 4)) -> None:
-        """Plot two columns for comparison."""
+                    size: Tuple[int, int] = (10, 4)) -> None:
+        """Scatter comparison plot between raw and pretreated data."""
         plt.figure(figsize=size)
+        
         if cols[0] in df:
-            plt.plot(df.index, df[cols[0]], '#f15bb5', marker='+', linestyle='None', label=f'Before {pretreat}')
+            plt.scatter(
+                df.index,
+                df[cols[0]].to_numpy().ravel(),
+                color="#f15bb5",
+                marker="+",
+                label=f"Before {pretreat}"
+            )
+
         if cols[1] in df:
-            plt.plot(df.index, df[cols[1]], 'green', marker='.', linestyle='None', label=f'After {pretreat}')
-        plt.xlabel('Date')
+            plt.scatter(
+                df.index,
+                df[cols[1]].to_numpy().ravel(),
+                color="green",
+                marker=".",
+                label=f"After {pretreat}"
+            )
+
+        plt.xlabel("Date")
         plt.ylabel(ylabel)
         plt.legend()
         plt.tight_layout()
         plt.show()
 
+
+    # ----------------------------------------------------------------------
+    # Plotting of single varibale time series
+    # ----------------------------------------------------------------------
+    
     @staticmethod
-    def single_variable_plot(series: pd.Series, ylabel: str, size: Tuple[int, int] = (10, 4)) -> None:
-        """Plot a single variable."""
-        plt.figure(figsize=size)
-        plt.plot(series.index, series.values, 'purple', marker='s', linewidth=1.5)
-        plt.xlabel('Date')
-        plt.ylabel(ylabel)
+    def single_variable_plot(plot_data: pd.DataFrame, size: Tuple[int, int], ylabel: str) -> None:
+        """Plot a single time-series variable (handles Series or single-column DataFrame)."""
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        # Accept either a Series or a single-column DataFrame
+        if isinstance(plot_data, pd.DataFrame):
+            if plot_data.shape[1] > 1:
+                raise ValueError("Expected a single-column DataFrame or Series for plotting.")
+            y = np.asarray(plot_data.iloc[:, 0]).reshape(-1)
+            x = np.asarray(plot_data.index)
+        else:
+            y = np.asarray(plot_data).reshape(-1)
+            x = np.asarray(plot_data.index)
+
+        ls = 25
+        font = {"weight": "normal", "size": ls}
+        w, h = size
+
+        plt.figure(figsize=(w, h))
+        plt.plot(
+            x,
+            y,
+            color="purple",
+            marker="s",
+            markersize=10,
+            linestyle="-",
+            linewidth=3.5,
+            label=ylabel,
+        )
+        plt.ylabel(ylabel, font)
+        plt.xlabel("Date", font)
+        plt.tick_params(labelsize=ls)
+        plt.legend(prop=font, loc="lower right", ncol=1, frameon=True)
         plt.tight_layout()
         plt.show()
+
+    
 
     # ----------------------------------------------------------------------
     # kLa and flux estimation
@@ -242,8 +286,8 @@ class LiquidQuantifier:
         if show_plots:
             hourly_kla = flux_df[['kla_SFV']].resample('H').mean()
             hourly_flux = flux_df[['EstimatedFlux']].resample('H').mean()
-            self.single_variable_plot(hourly_kla['kla_SFV'], 'kₗaₙ₂ₒ (d⁻¹)')
-            self.single_variable_plot(hourly_flux['EstimatedFlux'], 'N₂O flux (g-N/h/m²)')
+            self.single_variable_plot(hourly_kla, [25, 8], 'k$_L$a$_{N_2O}$ (d$^{-1}$)')
+            self.single_variable_plot(hourly_flux, [25, 8], 'N$_2$O flux (g-N/h-m$^2$)')
 
         self.results = flux_df
         return flux_df
