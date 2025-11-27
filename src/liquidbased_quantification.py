@@ -269,8 +269,8 @@ class LiquidQuantifier:
         df['After_IQR_LiqTemp'] = self.pretreat_iqr_by_group(raw, 'Liquid_temperature_(°C)', '1H')
 
         if show_plots:
-            self.compare_plot(df, ['RawAirflow', 'After_IQR_Airflow'], 'IQR', 'Airflow (m³/s)')
-            self.compare_plot(df, ['RawLiqN2O', 'After_IQR_LiqN2O'], 'IQR', 'Liq N₂O (mgN/L)')
+            self.compare_plot(df, ['RawAirflow', 'After_IQR_Airflow'], 'IQR', 'Airflow (m$^3$/s)')
+            self.compare_plot(df, ['RawLiqN2O', 'After_IQR_LiqN2O'], 'IQR', 'Liq N$_2$O (mgN/L)')
             self.compare_plot(df, ['RawLiqTemp', 'After_IQR_LiqTemp'], 'IQR', 'Temperature (°C)')
 
         # Step 2: Interpolation
