@@ -30,9 +30,27 @@ python -m pip install -e .
 
 ```
 
+---
+## 🧩 Example Data
+
+* A placeholder Excel file is included under ['data/Monitoring_Data_Example.xlsx'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification/blob/21d9d6b2bafa2d38a378dd28d77513d84e06478f/data/Monitoring_Data_Example.xlsx).
+Replace this file with your actual monitoring dataset.  
+* Your dataset should contain timestamped measurements of dissolved N<sub>2</sub>O concentration (mgN<sub>2</sub>O-N/L), liquid temperature (°C) and pass airflow rate (m<sup>3</sup>/s). Please ensure that the units of all variables are converted to the specified units in advance, as this is required for the subsequent calculations.   
+* Your dataset should keep the same header as the provided template.
+* Please update the reactor depth (D<sub>R</sub>) and aeration field size (AerationFieldSize) in the demo scripts (i.e. ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py) or ['demo.ipynb'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.ipynb) to match your plant dimensions.
+
+---
+
+
 ## 🚀 Quick start
 
 * Option 1: In Anaconda Powershell Prompt
+
+(1) Directly run the ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py)
+```bash
+python .\demo.py
+```
+(2) OR, call functions of this package in the interactive python, if you want to know a little bit more of the calculation process
 ```bash
 # Activate your interactive Python shell
 python
@@ -46,20 +64,10 @@ results = model.run_pipeline(show_plots=True)
 
 * Option 2: In any Python interpreter under your Conda environment with the cloned package installed
 
-(1) Open ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py) and click Run (e.g., in VS Code or Spyder)
-, OR,
-(2) Open ['demo.ipynb'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.ipynb) in Jupyter Notebook and run all cells
+(1) Open ['demo.py'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.py) and click Run (e.g., in VS Code or Spyder)  
+(2) OR, Open ['demo.ipynb'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification-/blob/main/demo.ipynb) in Jupyter Notebook and run all cells
 
 
----
-## 🧩 Example Data
-
-A placeholder Excel file is included under ['data/Monitoring_Data_Example.xlsx'](https://github.com/Julylle/Liquid-based-Nitrous-Oxide-Quantification/blob/21d9d6b2bafa2d38a378dd28d77513d84e06478f/data/Monitoring_Data_Example.xlsx).
-Replace this file with your actual monitoring dataset.
-Your dataset should contain timestamped measurements of dissolved oxygen, N₂O, and related process variables.
-Your dataset should keep the same header and unit as the provided template.
-
----
 
 ## 📜 License
 This project is licensed under the MIT License, see the LICENSE file for details.
